@@ -1,3 +1,5 @@
+.gradle/
+
 bomlo-alerts/
 bomlo-cli/
 bomlo-data-analyse/
