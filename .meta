@@ -16,7 +16,7 @@
     "helse-spanner": "git@github.com:navikt/helse-spanner.git",
     "helse-spare": "git@github.com:navikt/helse-spare.git",
     "helse-sparkelapper": "git@github.com:navikt/helse-sparkelapper.git",
-    "helse-sparker": "git@github.com:navikt/helse-sparker.git",
+    "helse-sparker-alt": "git@github.com:navikt/helse-sparker-alt.git",
     "helse-sparker-feriepenger": "git@github.com:navikt/helse-sparker-feriepenger.git",
     "helse-sparsom": "git@github.com:navikt/helse-sparsom.git",
     "helse-speaker": "git@github.com:navikt/helse-speaker.git",
