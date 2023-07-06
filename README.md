@@ -1,4 +1,4 @@
-# EESSI Pensjon
+# Uoffisielt meta-repo for tbd sine repo
 
 Et meta-repo, med en samling med applikasjoner, bibliotek og verktøy - som utgjør vedtaksløsningen for sykepenger.
 
