@@ -16,7 +16,7 @@ mainline: ## Switch all repos to mainline (main/master)
 	@meta exec "$(root_dir)bin/switch_to_mainline.sh"  --parallel
 
 build: ## Run ./gradlew build
-	@meta exec "$(root_dir)bin/build.sh" --exclude "tbd-meta"
+	@meta exec "$(root_dir)bin/build.sh" --exclude "tbd-meta" --parallel
 
 gw: ## Run ./gradlew <target> - (e.g run using make gw clean build)
 	@meta exec "$(root_dir)bin/gw.sh $(filter-out $@,$(MAKECMDGOALS))" --exclude "$(meta_project)" --parallel
