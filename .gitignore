@@ -1,6 +1,7 @@
 .gradle/
 
 bomlo-alerts/
+bomlo-bigquery-terraform
 bomlo-cli/
 bomlo-data-analyse/
 helse/
@@ -33,7 +34,6 @@ helse-spleis/
 helse-spleis-testdata/
 helse-spock/
 helse-spokelse/
-helse-spoler/
 helse-sporbar/
 helse-sporing/
 helse-sportsrevyen/

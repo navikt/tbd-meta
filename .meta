@@ -1,6 +1,7 @@
 {
   "projects": {
     "bomlo-alerts": "git@github.com:navikt/bomlo-alerts.git",
+    "bomlo-bigquery-terraform": "git@github.com:navikt/bomlo-bigquery-terraform.git",
     "bomlo-cli": "git@github.com:navikt/bomlo-cli.git",
     "bomlo-data-analyse": "git@github.com:navikt/bomlo-data-analyse.git",
     "helse": "git@github.com:navikt/helse.git",
@@ -33,7 +34,6 @@
     "helse-spleis-testdata": "git@github.com:navikt/helse-spleis-testdata.git",
     "helse-spock": "git@github.com:navikt/helse-spock.git",
     "helse-spokelse": "git@github.com:navikt/helse-spokelse.git",
-    "helse-spoler": "git@github.com:navikt/helse-spoler.git",
     "helse-sporbar": "git@github.com:navikt/helse-sporbar.git",
     "helse-sporing": "git@github.com:navikt/helse-sporing.git",
     "helse-sportsrevyen": "git@github.com:navikt/helse-sportsrevyen.git",
