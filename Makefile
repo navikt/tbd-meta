@@ -6,8 +6,12 @@ meta_project := $(notdir $(patsubst %/,%,$(dir $(root_dir))))
 help:
 	@echo "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
-meta-update: ## Clone any repos that exist in your .meta file but aren't cloned locally
+meta-update: ## Add missing team-repos
+	@git diff --exit-code > /dev/null || (git stash -u && echo "*** Stashed your local changes\! You need to pop the stash afterwards\!")
 	@meta git update
+	@gh api orgs/navikt/teams/tbd/repos --paginate | jq 'map(select(.archived == false)) | .[] | "meta project import \(.name) \(.ssh_url)"' | grep -v iac | grep -v "\-datadeling" | grep -v "\-meta" | grep -v "spommer" | grep -v "rustfri"| xargs -n 1 sh -c
+	@cat .meta | jq -r '.projects | keys[]' | while read -r project; do grep -q "includeBuild \"$project\"" settings.gradle || echo "includeBuild \"$project\"" >> settings.gradle; done
+	git diff --exit-code || (echo "Please commit changes " && exit 1)
 
 pull: ## Run git pull --all --rebase --autostash on all repos
 	@meta exec "$(root_dir)bin/pull_from_repo.sh" --parallel
