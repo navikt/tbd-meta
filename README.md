@@ -1,4 +1,4 @@
-# Uoffisielt meta-repo for tbd sine repo
+# Meta-repo for tbd sine repo
 
 Et meta-repo, med en samling med applikasjoner, bibliotek og verktøy - som utgjør vedtaksløsningen for sykepenger.
 
@@ -28,7 +28,7 @@ Dersom du nå åpner `build.gradle` med `Open` (som Project) i IntelliJ så får
 
 Spørsmål knyttet til koden eller prosjektet kan rettes mot:
 
-* Kjetil (kjetil.jorgensen-dahl at nav.no)
+* Eirik (eirik.gallefoss at nav.no)
 
 ### For NAV-ansatte
 
