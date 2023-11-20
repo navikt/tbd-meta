@@ -51,7 +51,7 @@
     "omrade-helse-etterlevelse-topic": "git@github.com:navikt/omrade-helse-etterlevelse-topic.git",
     "rapids-and-rivers": "git@github.com:navikt/rapids-and-rivers.git",
     "rapids-and-rivers-cli": "git@github.com:navikt/rapids-and-rivers-cli.git",
-    "styringsinfo-datafortelling": "git@github.com:navikt/styringsinfo-datafortelling.git",
+    "helse-styringsinfo-datafortelling": "git@github.com:navikt/helse-styringsinfo-datafortelling.git",
     "tbd": "git@github.com:navikt/tbd.git",
     "helse-spapi": "git@github.com:navikt/helse-spapi.git"
   }
