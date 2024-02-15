@@ -1,0 +1,21 @@
+initscript {
+    repositories {
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath 'com.github.ben-manes:gradle-versions-plugin:+'
+    }
+}
+
+allprojects {
+    apply plugin: com.github.benmanes.gradle.versions.VersionsPlugin
+
+    tasks.named("dependencyUpdates").configure {
+        rejectVersionIf {
+            ['alpha', 'beta', 'b', 'rc', 'cr', 'm', 'preview', 'pr']
+                    .any { qualifier -> it.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/}
+        }
+        revision = 'release'
+    }
+}

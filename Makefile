@@ -26,10 +26,6 @@ build: ## Run ./gradlew build
 gw: ## Run ./gradlew <target> - (e.g run using make gw clean build)
 	@meta exec "$(root_dir)bin/gw.sh $(filter-out $@,$(MAKECMDGOALS))" --exclude "$(meta_project)" --parallel
 
-upgrade-gradle: ## Upgrade gradle in all projects - usage GRADLEW_VERSION=x.x.x make upgrade-gradle
-	@meta exec "$(root_dir)bin/upgrade_gradle.sh" --exclude "$(meta_project)"
-	script/upgrade_gradle.sh
-
 check-if-up-to-date: ## check if all changes are commited and pushed - and that we are on the mainline with all changes pulled
 	@meta exec "$(root_dir)bin/check_if_we_are_up_to_date.sh" --exclude "$(meta_project)" # --parallel seemed to skip some projects(?!)
 
@@ -38,3 +34,10 @@ list-local-commits: ## shows local, unpushed, commits
 
 prepush-review: ## let's you look at local commits across all projects and decide if you want to push
 	@meta exec 'output=$$(git log --oneline origin/HEAD..HEAD) ; [ -n "$$output" ] && (git show --oneline origin/HEAD..HEAD | cat && echo "Pushe? (y/N)" && read a && [ "$$a" = "y" ] && git push) || true' --exclude "$(meta_project)"
+
+upgrade-gradle: ## Upgrade gradle in all projects - usage GRADLEW_VERSION=x.x.x make upgrade-gradle
+	@meta exec "$(root_dir)bin/upgrade_gradle.sh" --exclude "$(meta_project)"
+	script/upgrade_gradle.sh
+
+upgradable-dependencies-report: ## Lists dependencies that are outdated - across all projects - then sorted uniquely
+	@make gw "dependencyUpdates --refresh-dependencies --init-script ../gradle/init/dependencies.gradle" 2>&1 | grep '\->' | grep -v "Gradle" | cut -d' ' -f3,4,6 | sed 's#\[##' | sed 's#\]##' | sort | uniq
