@@ -54,11 +54,11 @@
     "helse-styringsinfo-datafortelling": "git@github.com:navikt/helse-styringsinfo-datafortelling.git",
     "tbd": "git@github.com:navikt/tbd.git",
     "helse-spapi": "git@github.com:navikt/helse-spapi.git",
-    "spurtedu": "git@github.com:navikt/spurtedu.git",
     "tbd-libs": "git@github.com:navikt/tbd-libs.git",
     "helse-spalten": "git@github.com:navikt/helse-spalten.git",
     "ws-proxy": "git@github.com:navikt/ws-proxy.git",
-    "spekemat": "git@github.com:navikt/spekemat.git",
-    "afp": "git@github.com:navikt/afp.git"
+    "afp": "git@github.com:navikt/afp.git",
+    "helse-spurtedu": "git@github.com:navikt/helse-spurtedu.git",
+    "helse-spekemat": "git@github.com:navikt/helse-spekemat.git"
   }
 }
