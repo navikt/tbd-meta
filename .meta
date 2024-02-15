@@ -10,7 +10,6 @@
     "helse-docs": "git@github.com:navikt/helse-docs.git",
     "helse-flexjar-proxy": "git@github.com:navikt/helse-flexjar-proxy.git",
     "helse-redteam": "git@github.com:navikt/helse-redteam.git",
-    "helse-repos": "git@github.com:navikt/helse-repos.git",
     "helse-risk-mock": "git@github.com:navikt/helse-risk-mock.git",
     "helse-spaghet": "git@github.com:navikt/helse-spaghet.git",
     "helse-spammer": "git@github.com:navikt/helse-spammer.git",
