@@ -57,5 +57,6 @@
   "ws-proxy": "plain",
   "afp": "plain",
   "helse-spurtedu": "plain",
-  "helse-spekemat": "plain"
+  "helse-spekemat": "plain",
+  "helse-spill-av-im": "plain"
 }
