@@ -40,4 +40,7 @@ upgrade-gradle: ## Upgrade gradle in all projects - usage GRADLEW_VERSION=x.x.x 
 	script/upgrade_gradle.sh
 
 upgradable-dependencies-report: ## Lists dependencies that are outdated - across all projects - then sorted uniquely
-	@make gw "dependencyUpdates --refresh-dependencies --init-script ../gradle/init/dependencies.gradle" 2>&1 | grep '\->' | grep -v "Gradle" | cut -d' ' -f3,4,6 | sed 's#\[##' | sed 's#\]##' | sort | uniq
+	@meta exec "../bin/upgradable_dependencies.sh" --exclude "$(meta_project)" --parallel | sort | uniq
+
+upgradable-dependencies-report-per-project: ## Lists dependencies that are outdated - per project
+	@meta exec "../bin/upgradable_dependencies.sh" --exclude "$(meta_project)" --parallel
