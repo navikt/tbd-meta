@@ -46,7 +46,6 @@
     "helse-spydig": "git@github.com:navikt/helse-spydig.git",
     "helse-styringsinfo-kvalitetssjekk": "git@github.com:navikt/helse-styringsinfo-kvalitetssjekk.git",
     "helse-vedtaksfeed": "git@github.com:navikt/helse-vedtaksfeed.git",
-    "helsearbeidsgiver-bro-sykepenger": "git@github.com:navikt/helsearbeidsgiver-bro-sykepenger.git",
     "omrade-helse-etterlevelse-topic": "git@github.com:navikt/omrade-helse-etterlevelse-topic.git",
     "rapids-and-rivers": "git@github.com:navikt/rapids-and-rivers.git",
     "rapids-and-rivers-cli": "git@github.com:navikt/rapids-and-rivers-cli.git",

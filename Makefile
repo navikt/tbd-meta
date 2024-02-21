@@ -10,7 +10,7 @@ meta-update: ## Add missing team-repos (needs 'gh'-command)
 	@brew install jq
 	@git diff --exit-code > /dev/null || (git stash -u && echo "*** Stashed your local changes\! You need to pop the stash afterwards\!")
 	@meta git update
-	@gh api orgs/navikt/teams/tbd/repos --paginate | jq 'map(select(.archived == false)) | .[] | "meta project import \(.name) \(.ssh_url)"' | grep -v iac | grep -v "\-datadeling" | grep -v "\-meta" | grep -v "spommer" | grep -v "rustfri"| xargs -n 1 sh -c
+	@gh api orgs/navikt/teams/tbd/repos --paginate | jq 'map(select(.archived == false)) | .[] | "meta project import \(.name) \(.ssh_url)"' | grep -v iac | grep -v "\-datadeling" | grep -v "helsearbeidsgiver-bro-" | grep -v "\-meta" | grep -v "spommer" | grep -v "rustfri"| xargs -n 1 sh -c
 	@./update_settings-gradle.sh
 	@git diff --exit-code || (echo "Please commit changes " && exit 1)
 
