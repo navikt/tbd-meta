@@ -53,6 +53,7 @@
   "helse-spapi": "append gitmoji",
   "tbd-libs": "plain",
   "helse-spalten": "prepend gitmoji",
+  "helse-spotlight": "prepend gitmoji",
   "ws-proxy": "plain",
   "afp": "plain",
   "helse-spurtedu": "plain",

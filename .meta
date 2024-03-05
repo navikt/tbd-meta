@@ -58,6 +58,7 @@
     "afp": "git@github.com:navikt/afp.git",
     "helse-spurtedu": "git@github.com:navikt/helse-spurtedu.git",
     "helse-spekemat": "git@github.com:navikt/helse-spekemat.git",
-    "helse-spill-av-im": "git@github.com:navikt/helse-spill-av-im.git"
+    "helse-spill-av-im": "git@github.com:navikt/helse-spill-av-im.git",
+    "helse-spotlight": "git@github.com:navikt/helse-spotlight.git"
   }
 }
