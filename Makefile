@@ -26,8 +26,14 @@ build: ## Run ./gradlew build
 gw: ## Run ./gradlew <target> - (e.g run using make gw clean build)
 	@meta exec "$(root_dir)bin/gw.sh $(filter-out $@,$(MAKECMDGOALS))" --exclude "$(meta_project)" --parallel
 
-check-if-up-to-date: ## check if all changes are commited and pushed - and that we are on the mainline with all changes pulled
+check-if-up-to-date: ## check if all changes are committed and pushed - and that we are on the mainline with all changes pulled
 	@meta exec "$(root_dir)bin/check_if_we_are_up_to_date.sh" --exclude "$(meta_project)" # --parallel seemed to skip some projects(?!)
+
+commit-report: ## commits from the last 7 days
+	@meta exec "$(root_dir)bin/commit-report.sh"
+
+commit-report-chronological: ## commits from the last 7 days
+	@meta exec "$(root_dir)bin/commit-report.sh" --parallel | grep  " - " | sort
 
 list-local-commits: ## shows local, unpushed, commits
 	@meta exec "git log --oneline origin/HEAD..HEAD | cat"
