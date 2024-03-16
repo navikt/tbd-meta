@@ -20,7 +20,7 @@ if test -f build.gradle || test -f build.gradle.kts; then
 
     REPO=$(basename "$(pwd)")
     COMMIT_STYLE=$(jq -r ".\"$REPO\"" ../bin/commit_style.json)
-    COMMIT_MESSAGE="Upgrade Gradle wrapper to $GRADLEW_VERSION"
+    COMMIT_MESSAGE="Bump Gradle wrapper -> $GRADLEW_VERSION"
     case "$COMMIT_STYLE" in
       "prepend gitmoji") COMMIT_MESSAGE="⬆️ $COMMIT_MESSAGE";;
       "append gitmoji") COMMIT_MESSAGE="$COMMIT_MESSAGE ⬆️";;
