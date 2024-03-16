@@ -17,7 +17,18 @@ if test -f build.gradle || test -f build.gradle.kts; then
     $(dirname -- "$0")/build.sh
     echo "Committing changes ..."
     git add gradle gradlew.bat gradlew
-    git commit -m"U - Upgrade Gradle wrapper to $GRADLEW_VERSION"
+
+    REPO=$(basename "$(pwd)")
+    COMMIT_STYLE=$(jq -r ".\"$REPO\"" ../bin/commit_style.json)
+    COMMIT_MESSAGE="Upgrade Gradle wrapper to $GRADLEW_VERSION"
+    case "$COMMIT_STYLE" in
+      "prepend gitmoji") COMMIT_MESSAGE="⬆️ $COMMIT_MESSAGE";;
+      "append gitmoji") COMMIT_MESSAGE="$COMMIT_MESSAGE ⬆️";;
+      "plain") COMMIT_MESSAGE="$COMMIT_MESSAGE";;
+      "arlo") COMMIT_MESSAGE="U - $COMMIT_MESSAGE";;
+      *) echo "Commit style not found"; exit 1;;
+    esac
+    git commit -m"$COMMIT_MESSAGE"
   fi
 else
   echo "Not a gradle project."
