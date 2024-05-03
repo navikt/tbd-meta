@@ -32,6 +32,9 @@ check-if-up-to-date: ## check if all changes are committed and pushed - and that
 commit-report: ## commits from the last 7 days
 	@meta exec "$(root_dir)bin/commit-report.sh"
 
+commit-count: ## counts authors per commit, outputs one csv per repo
+	@meta exec "$(root_dir)bin/commit-count-authors.sh"
+
 commit-report-chronological: ## commits from the last 7 days
 	@meta exec "$(root_dir)bin/commit-report.sh" --parallel | grep  " - " | sort
 
